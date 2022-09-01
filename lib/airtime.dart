@@ -1,8 +1,8 @@
 import 'package:airime_and_data/costant.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'data.dart';
+import 'or_payment.dart';
 
 class Airtime extends StatefulWidget {
   const Airtime({Key? key}) : super(key: key);
@@ -169,6 +169,11 @@ class _AirtimeState extends State<Airtime> {
                   hintText: 'Select Account',
                   suffixIcon: Image.asset('images/vector.jpg'),
                   border: OutlineInputBorder(),
+                  hintStyle: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: kHintColor,
+                  ),
                 ),
               ),
               SizedBox(
@@ -253,10 +258,22 @@ class _AirtimeState extends State<Airtime> {
                   hintText: 'Phone Number',
                   // hintStyle:
                   border: OutlineInputBorder(),
+                  hintStyle: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: kHintColor,
+                  ),
                 ),
               ),
               ElevatedButton(
-                onPressed: () => {},
+                onPressed: () => {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ORPayment(),
+                    ),
+                  ),
+                },
                 child: const Text(
                   'Pay now',
                   style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w700),

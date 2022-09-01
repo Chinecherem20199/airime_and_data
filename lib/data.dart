@@ -1,3 +1,4 @@
+import 'package:airime_and_data/or_payment.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -151,13 +152,20 @@ class _DataState extends State<Data> {
               "Select Account",
               style: kTextFieldStyle,
             ),
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Select Account',
-                suffixIcon: Image.asset(
-                  'images/vector.jpg',
+            SingleChildScrollView(
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Select Account',
+                  hintStyle: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w600,
+                    color: kHintColor,
+                  ),
+                  suffixIcon: Image.asset(
+                    'images/vector.jpg',
+                  ),
+                  border: OutlineInputBorder(),
                 ),
-                border: OutlineInputBorder(),
               ),
             ),
             const Text(
@@ -347,7 +355,14 @@ class _DataState extends State<Data> {
               height: 10,
             ),
             ElevatedButton(
-              onPressed: () => {},
+              onPressed: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ORPayment(),
+                  ),
+                ),
+              },
               child: const Text(
                 'Pay now',
                 style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w700),

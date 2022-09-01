@@ -5,6 +5,7 @@ const kAirtimeTextColor = Color(0xffFFFFFF);
 const kDataTextColor = Color(0xff9E9E9E);
 const kCircleBg = Color(0xff5A39B7);
 const kRecipientColor = Color(0xff404040);
+const kHintColor = Color(0xffE0E0E0);
 
 const kTextFieldStyle = TextStyle(
   fontSize: 18,
